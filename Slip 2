@@ -1,0 +1,74 @@
+Q1) Write a program to read the First Name and Last Name of a person, his weight and height
+
+using command line arguments. Calculate the BMI Index which is defined as the individual's
+
+body mass divided by the square of their height.
+
+(Hint: BMI = Wts. In kgs / (ht)²)
+
+public class BMICalculator {
+
+public static void main(String[] args) {
+
+if (args.length != 4) {
+
+System.out.println("Usage: java BMICalculator <First Name>
+
+<Last Name> <Weight (in kg)> <Height (in meters)>");
+
+return;
+
+}
+
+// Read command line arguments
+
+String firstName = args[0];
+
+String lastName = args[1];
+
+double weight = Double.parseDouble(args[2]);
+
+// weight in
+
+kilograms
+
+double height = Double.parseDouble(args[3]);
+
+// height in meters
+
+// Calculate BMI
+
+double bmi = weight / (height * height);
+
+// Display result
+
+System.out.println("Person: " + firstName + " " + lastName);
+
+System.out.println("Weight: " + weight + " kg");
+
+System.out.println("Height: " + height + " meters");
+
+System.out.println("BMI Index: " + String.format("%.2f", bmi));
+
+// Optional: Provide a basic interpretation of the BMI
+
+if (bmi < 18.5) {
+
+System.out.println("Underweight");
+
+} else if (bmi >= 18.5 && bmi < 24.9) {
+
+System.out.println("Normal weight");
+
+} else if (bmi >= 25 && bmi < 29.9) {
+
+System.out.println("Overweight");
+
+} else {
+System.out.println("Obese");
+
+}
+
+}
+
+}
